@@ -1,46 +1,3 @@
-# Achieve3000 Codespaces Test
-
-## How to run?
-
-```sh
-make run
-```
-
-## How to check logs?
-
-```sh
-make server-log
-```
-
-```sh
-make application-log
-```
-
-```sh
-tail -f /tmp/{app,server}.log
-```
-
-## What's the server address?
-
-```sh
-make server-address
-```
-
-## Stop environment
-
-```sh
-make stop
-```
-
-## List targets
-
-```sh
-make list
-```
-
-## Makefile
-
-```makefile
 run-web:
 	DEBUG=codespaces-test:* nohup npm start > /tmp/app.log &
 run-tunnel:
@@ -62,5 +19,3 @@ stop:
 	ps | grep -ie node | awk '{print $$1}' | xargs kill -9
 list:
 	@grep '^[^#[:space:]].*:' Makefile
-
-```
